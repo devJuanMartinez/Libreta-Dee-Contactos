@@ -37,8 +37,11 @@ class ListadoFragment: Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        binding.button.setOnClickListener {
+        binding.btAddContacto.setOnClickListener {
             findNavController().navigate(R.id.action_listadoFragment_to_addContactoFragment)
+        }
+        binding.btEliminartodosContactos.setOnClickListener {
+
         }
 
         configRecycler()
@@ -47,17 +50,11 @@ class ListadoFragment: Fragment() {
         })
     }
 
-//    val observer = Observer<Contactos>{
-//
-//
-//        configRecycler()
-//    }
-
     private fun configRecycler() {
         val layoutManager = LinearLayoutManager(requireContext())
         adapter = ContactosAdapter(object : ContactosAdapter.MyClick{
             override fun onContactoClick(contactos: Contactos) {
-                TODO("Not yet implemented")
+                findNavController().navigate(R.id.action_listadoFragment_to_infoContactoFragment)
             }
         })
         binding.recyclerView.layoutManager = layoutManager

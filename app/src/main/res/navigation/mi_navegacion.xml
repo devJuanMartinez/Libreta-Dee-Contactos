@@ -11,9 +11,16 @@
         <action
             android:id="@+id/action_listadoFragment_to_addContactoFragment"
             app:destination="@id/addContactoFragment" />
+        <action
+            android:id="@+id/action_listadoFragment_to_infoContactoFragment"
+            app:destination="@id/infoContactoFragment" />
     </fragment>
     <fragment
         android:id="@+id/addContactoFragment"
         android:name="com.example.libretadecontactos.ui.fragments.AddContactoFragment"
         android:label="AddContactoFragment" />
+    <fragment
+        android:id="@+id/infoContactoFragment"
+        android:name="com.example.libretadecontactos.ui.fragments.InfoContactoFragment"
+        android:label="InfoContactoFragment" />
 </navigation>

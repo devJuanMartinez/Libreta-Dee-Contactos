@@ -34,19 +34,27 @@ class AddContactoFragment: Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         binding.btGuardar.setOnClickListener {
-
             val nombre = binding.etnombre.text.toString()
             val apellidos = binding.etapellidos.text.toString()
+//            val telefono = binding.etTelefono.text.toString().toInt()
+//            val email = binding.etEmail.text.toString()
+//            val edad = binding.etEdad.text.toString().toInt()
+//            val fav = binding.cbFavoritos.isChecked
 
-            if (nombre.isNotEmpty() && apellidos.isNotEmpty()){
+            if (nombre.isNotEmpty() && apellidos.isNotEmpty() ){
                 val contactoNuevo = Contactos(nombre, apellidos)
                 viewModel.insertaContacto(contactoNuevo)
             }else{
                 binding.etnombre.error = "Campo requerido"
                 binding.etapellidos.error = "Campo requerido"
+                binding.etTelefono.error = "Campo requerido"
+                binding.etEmail.error = "Campo requerido"
+                binding.etEdad.error = "Campo requerido"
             }
 
-            //findNavController().navigateUp()
+            findNavController().navigateUp()
         }
     }
 }
+//&& telefono>0 && email.isNotEmpty() && edad>0
+//, telefono, email, edad, fav

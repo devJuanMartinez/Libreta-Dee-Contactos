@@ -21,7 +21,7 @@ class MyViewModel(val context: Context): ViewModel() {
 
     fun insertaContacto (contacto: Contactos) {
         viewModelScope.launch {
-            insertaContacto(contacto)
+            repositorio.insertaContacto(contacto)
         }
     }
 
