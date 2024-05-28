@@ -8,12 +8,12 @@ data class Contactos(
 
     val nombre: String,
     val adellidos: String,
-    val telefono: Int,
-    val email: String,
-    val edad: Int,
-    val favorito: Boolean
+//    val telefono: Int,
+//    val email: String,
+//    val edad: Int,
+//    val favorito: Boolean
     ) {
         @PrimaryKey(autoGenerate = true)
-        val id: Int = 0
+        var id: Int = 0
     }
 

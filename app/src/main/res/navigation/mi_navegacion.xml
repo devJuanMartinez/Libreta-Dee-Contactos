@@ -7,5 +7,13 @@
     <fragment
         android:id="@+id/listadoFragment"
         android:name="com.example.libretadecontactos.ui.fragments.ListadoFragment"
-        android:label="ListadoFragment" />
+        android:label="ListadoFragment" >
+        <action
+            android:id="@+id/action_listadoFragment_to_addContactoFragment"
+            app:destination="@id/addContactoFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addContactoFragment"
+        android:name="com.example.libretadecontactos.ui.fragments.AddContactoFragment"
+        android:label="AddContactoFragment" />
 </navigation>

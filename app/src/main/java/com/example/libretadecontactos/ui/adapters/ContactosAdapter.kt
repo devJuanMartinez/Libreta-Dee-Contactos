@@ -28,11 +28,18 @@ class ContactosAdapter(private val listener: MyClick
 
     override fun onBindViewHolder(holder: MovieHolder, position: Int) {
         val contacto = listado[position]
-        holder.binding.nombre.text = contacto.nombre
-        holder.binding.telefono.text = contacto.telefono.toString()
+
+        holder.binding.etnombre.text = contacto.nombre
+        holder.binding.telefono.text = contacto.adellidos.toString()
 
         holder.itemView.setOnClickListener {
             listener.onContactoClick(contacto)
         }
+    }
+
+    fun updateList(contactos: List<Contactos>) {
+        listado.clear()
+        listado.addAll(contactos)
+        notifyDataSetChanged()
     }
 }
